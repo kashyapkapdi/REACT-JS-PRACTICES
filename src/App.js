@@ -5,18 +5,19 @@ class App extends Component {
   state = {
     userName: "Kashyap",
     guestName: "Lay",
-    isLoggedIn: true,
+    isLoggedIn: false,
   };
   render() {
-    // this is the demo of Element variable conditional rendering.
-    let messages;
-
-    if (this.state.isLoggedIn) {
-      messages = <User userName={this.state.userName} />;
-    } else {
-      messages = <Guest guestName={this.state.guestName} />;
-    }
-    return <div>{messages}</div>;
+    // this is the demo of Ternary operator conditional rendering.
+    return (
+      <div>
+        {this.state.isLoggedIn ? (
+          <User userName={this.state.userName} />
+        ) : (
+          <Guest guestName={this.state.guestName} />
+        )}
+      </div>
+    );
   }
 }
 
