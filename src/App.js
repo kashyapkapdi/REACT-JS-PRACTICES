@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Guest from "./components/Guest";
-import User from "./components/User";
+import ParentComp from "./components/pure-components/ParentComp";
 class App extends Component {
   state = {
     userName: "Kashyap",
@@ -11,7 +10,7 @@ class App extends Component {
     // this is the demo of Short circuit conditional rendering.
     return (
       <div>
-        {this.state.isLoggedIn && <User userName={this.state.userName} />}
+        <ParentComp />
       </div>
     );
   }
