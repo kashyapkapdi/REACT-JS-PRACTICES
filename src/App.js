@@ -5,17 +5,13 @@ class App extends Component {
   state = {
     userName: "Kashyap",
     guestName: "Lay",
-    isLoggedIn: false,
+    isLoggedIn: true,
   };
   render() {
-    // this is the demo of Ternary operator conditional rendering.
+    // this is the demo of Short circuit conditional rendering.
     return (
       <div>
-        {this.state.isLoggedIn ? (
-          <User userName={this.state.userName} />
-        ) : (
-          <Guest guestName={this.state.guestName} />
-        )}
+        {this.state.isLoggedIn && <User userName={this.state.userName} />}
       </div>
     );
   }
