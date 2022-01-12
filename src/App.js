@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from "react";
+import Guest from "./components/Guest";
+import User from "./components/User";
+class App extends Component {
+  state = {
+    userName: "Kashyap",
+    guestName: "Lay",
+  };
+  render() {
+    return (
+      <div>
+        <User userName={this.state.userName} />
+        <Guest guestName={this.state.guestName} />
+      </div>
+    );
+  }
 }
 
 export default App;
