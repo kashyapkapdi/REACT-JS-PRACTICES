@@ -5,12 +5,13 @@ class App extends Component {
   state = {
     userName: "Kashyap",
     guestName: "Lay",
+    isLoggedIn: true,
   };
   render() {
+    // this is the demo of Short circuit conditional rendering.
     return (
       <div>
-        <User userName={this.state.userName} />
-        <Guest guestName={this.state.guestName} />
+        {this.state.isLoggedIn && <User userName={this.state.userName} />}
       </div>
     );
   }
