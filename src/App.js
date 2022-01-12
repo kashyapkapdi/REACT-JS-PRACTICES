@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ParentComp from "./components/pure-components/ParentComp";
+import RefsDemo from "./components/Refs/RefsDemo";
 class App extends Component {
   state = {
     userName: "Kashyap",
@@ -10,7 +10,7 @@ class App extends Component {
     // this is the demo of Short circuit conditional rendering.
     return (
       <div>
-        <ParentComp />
+        <RefsDemo />
       </div>
     );
   }
