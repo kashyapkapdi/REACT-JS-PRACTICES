@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Portals from "./components/Portals/Portals";
+import Heros from "./components/Error-boundary/Heros";
+import ErrorBoundary from "./components/Error-boundary/ErrorBoundary";
 class App extends Component {
   state = {
     userName: "Kashyap",
@@ -7,10 +8,17 @@ class App extends Component {
     isLoggedIn: true,
   };
   render() {
-    // this is the demo of Short circuit conditional rendering.
     return (
       <div>
-        <Portals />
+        <ErrorBoundary>
+          <Heros heroName="Iron Man" />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Heros heroName="Batman" />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Heros heroName="joker" />
+        </ErrorBoundary>
       </div>
     );
   }
