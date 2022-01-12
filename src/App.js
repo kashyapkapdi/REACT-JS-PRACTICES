@@ -5,14 +5,15 @@ class App extends Component {
   state = {
     userName: "Kashyap",
     guestName: "Lay",
+    isLoggedIn: false,
   };
   render() {
-    return (
-      <div>
-        <User userName={this.state.userName} />
-        <Guest guestName={this.state.guestName} />
-      </div>
-    );
+    // this is the demo of if/else conditional rendering.
+    if (this.state.isLoggedIn) {
+      return <User userName={this.state.userName} />;
+    } else {
+      return <Guest guestName={this.state.guestName} />;
+    }
   }
 }
 
