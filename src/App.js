@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import ClickCounter from "./components/Render-Props/ClickCounter";
-import Counter from "./components/Render-Props/Counter";
-import HoverCounter from "./components/Render-Props/HoverCounter";
-import User from "./components/Render-Props/User";
+import ComponentC from "./components/Context/ComponentC";
+import { UserProvider } from "./components/Context/UserContext";
+
 class App extends Component {
   state = {
     userName: "Kashyap",
@@ -12,27 +11,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <ClickCounter />
-        <HoverCounter />
-        <User render={(isLoggedIn) => (isLoggedIn ? "Kashyap" : "Guest")} /> */}
-
-        <Counter
-          render={(count, incrementCount) => (
-            <ClickCounter
-              count={count}
-              incrementCount={incrementCount}
-            ></ClickCounter>
-          )}
-        />
-
-        <Counter
-          render={(count, incrementCount) => (
-            <HoverCounter
-              count={count}
-              incrementCount={incrementCount}
-            ></HoverCounter>
-          )}
-        />
+        <UserProvider value="Kashyap">
+          <ComponentC />
+        </UserProvider>
       </div>
     );
   }
