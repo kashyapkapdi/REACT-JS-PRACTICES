@@ -1,19 +1,17 @@
 import React, { Component } from "react";
-import ComponentC from "./components/Context/ComponentC";
-import { UserProvider } from "./components/Context/UserContext";
+import ClassCounter from "./components/useStateHooks/ClassCounter";
+import FunctionCounter from "./components/useStateHooks/FunctionCounter";
+import FunctionCounterObject from "./components/useStateHooks/FunctionCounterObject";
+import FunctionCounterArray from "./components/useStateHooks/FunctionCounterArray";
 
 class App extends Component {
-  state = {
-    userName: "Kashyap",
-    guestName: "Lay",
-    isLoggedIn: true,
-  };
   render() {
     return (
       <div>
-        <UserProvider value="Kashyap">
-          <ComponentC />
-        </UserProvider>
+        <ClassCounter />
+        <FunctionCounter />
+        <FunctionCounterObject />
+        <FunctionCounterArray />
       </div>
     );
   }
